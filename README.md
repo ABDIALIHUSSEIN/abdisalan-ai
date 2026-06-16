@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abdisalan AI
 
-## Getting Started
+A digital-twin portfolio chatbot for Abdisalan Ali. Visitors chat with "Abdisalan AI" to learn about his experience, skills, and projects — answers are grounded strictly in the profile data in [`src/lib/profile.ts`](src/lib/profile.ts), nothing is invented.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install dependencies (already done if you just scaffolded this):
+   ```bash
+   npm install
+   ```
+2. Add your Anthropic API key:
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   Then edit `.env.local` and set `ANTHROPIC_API_KEY` to a key from [console.anthropic.com](https://console.anthropic.com/settings/keys).
+3. Run the dev server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Until `ANTHROPIC_API_KEY` is set, the chat UI works but responds with a message explaining the AI backend isn't configured yet — the rest of the site (layout, About page) is fully usable without a key.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/lib/profile.ts` — the knowledge base (single source of truth about Abdisalan).
+- `src/lib/system-prompt.ts` — builds the system prompt enforcing tone and "don't invent facts" rules.
+- `src/app/api/chat/route.ts` — streams responses from the Claude API.
+- `src/app/page.tsx` — the chat UI (ChatGPT-style), persists history to `localStorage`.
+- `src/app/about/page.tsx` — static fallback page rendering the profile data directly.
 
-## Learn More
+## Updating Abdisalan's info
 
-To learn more about Next.js, take a look at the following resources:
+Edit `src/lib/profile.ts` only — both the chatbot's knowledge base and the About page read from it, so it stays in sync automatically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploying
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to a GitHub repo and import it on [Vercel](https://vercel.com/new), then add `ANTHROPIC_API_KEY` as an environment variable in the Vercel project settings.
