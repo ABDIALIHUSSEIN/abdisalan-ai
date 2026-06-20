@@ -28,11 +28,25 @@ export default function About() {
         </ul>
 
         <Section title="Experience">
-          <div className="space-y-3">
+          <div className="space-y-6">
             {profile.experience.map((e) => (
-              <div key={e.org} className="flex items-baseline justify-between gap-4 border-b border-zinc-900 pb-3">
-                <span className="font-medium text-zinc-200">{e.org}</span>
-                <span className="text-right text-sm text-zinc-500">{e.title}</span>
+              <div key={e.org}>
+                <div className="mb-2 flex items-baseline gap-2">
+                  <span className="font-semibold text-zinc-100">{e.org}</span>
+                  <span className="text-xs text-zinc-600">{e.location}</span>
+                </div>
+                <div className="space-y-3 border-l border-zinc-800 pl-4">
+                  {e.roles.map((r) => (
+                    <div key={r.title} className="pb-2">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="text-sm font-medium text-zinc-200">{r.title}</span>
+                        <span className="shrink-0 text-xs text-zinc-600">{r.period}</span>
+                      </div>
+                      {"type" in r && <div className="text-xs text-zinc-600">{r.type}</div>}
+                      <p className="mt-1 text-xs text-zinc-500">{r.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

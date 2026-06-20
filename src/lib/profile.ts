@@ -6,10 +6,83 @@ export const profile = {
     "Former CTO in media systems",
   ],
   experience: [
-    { org: "Salaam Group", title: "Fintech Operations Lead" },
-    { org: "Nasiye TV", title: "IT Project Manager" },
-    { org: "JiilMedia", title: "Project Manager" },
-    { org: "Asal Corporate", title: "Technical / CTO-level work" },
+    {
+      org: "Asal Media Corporation",
+      location: "Mogadishu, Somalia",
+      type: "Full-time",
+      roles: [
+        {
+          title: "Corporate Head of Digital Transformation & ICT",
+          period: "Dec 2025 – Present",
+          description: "Owns enterprise digital and ICT strategy, governance, and delivery.",
+        },
+        {
+          title: "Project & Change Manager",
+          period: "Mar 2024 – Dec 2025",
+          description: "Led cross-functional change and delivered ERP and ICT upgrades.",
+        },
+      ],
+    },
+    {
+      org: "Nasiye",
+      location: "Mogadishu, Somalia",
+      roles: [
+        {
+          title: "Executive Committee Member for Digital & Technology",
+          period: "Dec 2024 – Present",
+          type: "Part-time",
+          description: "Board-level technology advisory and digital strategy.",
+        },
+        {
+          title: "Chief Technology Officer",
+          period: "Sep 2022 – Dec 2024",
+          type: "Full-time",
+          description: "Led all technology operations and digital infrastructure.",
+        },
+      ],
+    },
+    {
+      org: "Salaam Group",
+      location: "Djibouti",
+      roles: [
+        {
+          title: "Network & Enterprise Security Architect",
+          period: "Apr 2018 – Jan 2024",
+          type: "Full-time",
+          description: "Led architecture for Zero Trust, network segmentation, IAM/MFA, encryption, SIEM, and EDR.",
+        },
+      ],
+    },
+    {
+      org: "Hormuud Telecom Somalia Inc.",
+      location: "Mogadishu, Somalia",
+      roles: [
+        {
+          title: "Network Engineer",
+          period: "Apr 2016 – Apr 2018",
+          type: "Full-time",
+          description: "Implemented and maintained network infrastructure and security controls.",
+        },
+        {
+          title: "Network Support Engineer",
+          period: "Nov 2015 – Apr 2016",
+          type: "Full-time",
+          description: "Provided Tier-2 network support and troubleshooting.",
+        },
+        {
+          title: "System Engineering Intern",
+          period: "Jul 2015 – Oct 2015",
+          type: "Apprenticeship",
+          description: "Assisted with server, network, and systems administration.",
+        },
+        {
+          title: "IT Trainee / Junior",
+          period: "Jul 2014 – Jul 2015",
+          type: "Internship",
+          description: "Entry-level IT support and learning rotation.",
+        },
+      ],
+    },
   ],
   skills: [
     "Fintech systems & operations",
@@ -82,7 +155,9 @@ Roles:
 ${profile.roles.map((r) => `- ${r}`).join("\n")}
 
 Experience:
-${profile.experience.map((e) => `- ${e.org} — ${e.title}`).join("\n")}
+${profile.experience.map((e) =>
+  e.roles.map((r) => `- ${e.org} — ${r.title} (${r.period}): ${r.description}`).join("\n")
+).join("\n")}
 
 Education:
 ${profile.education.map((e) => `- ${e.institution}: ${e.degree} (${e.years})${e.grade ? `, ${e.grade}` : ""}`).join("\n")}
