@@ -12,9 +12,9 @@ const STORAGE_KEY = "abdisalan-ai-chat";
 
 const SUGGESTED_PROMPTS = [
   "Who is Abdisalan?",
-  "What are his skills?",
-  "What projects has he built?",
-  "What's his current role?",
+  "What's his career background?",
+  "Quiz me on AI",
+  "Quiz me on Project Management",
 ];
 
 function loadStoredMessages(): Message[] {
@@ -89,6 +89,7 @@ export default function ChatApp() {
       });
     } finally {
       setIsStreaming(false);
+      textareaRef.current?.focus();
     }
   }
 
