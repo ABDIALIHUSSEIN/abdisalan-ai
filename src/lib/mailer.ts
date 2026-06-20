@@ -1,19 +1,15 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export async function sendQuestionAlert(question: string, turn: number) {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
-  if (!user || !pass) return;
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return;
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: { user, pass },
-  });
+  const resend = new Resend(apiKey);
 
-  await transporter.sendMail({
-    from: `"Abdisalan AI" <${user}>`,
-    to: user,
-    subject: `New visitor question on Abdisalan AI`,
+  await resend.emails.send({
+    from: "Abdisalan AI <onboarding@resend.dev>",
+    to: "sirabdiali@gmail.com",
+    subject: "New visitor question on Abdisalan AI",
     text: `A visitor just asked:\n\n"${question}"\n\n(Turn ${turn} of the conversation)\n\nView live site: https://abdisalan-ai.vercel.app`,
   });
 }
