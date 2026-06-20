@@ -66,11 +66,23 @@ export default function About() {
         </Section>
 
         <Section title="Projects">
-          <ul className="list-inside list-disc space-y-1 text-zinc-300">
-            {profile.projects.map((project) => (
-              <li key={project}>{project}</li>
+          <div className="space-y-6">
+            {profile.projects.map((cat) => (
+              <div key={cat.category}>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-indigo-400">{cat.category}</p>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {cat.items.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-2 text-sm text-zinc-300"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </Section>
 
         <Section title="Education">

@@ -100,11 +100,32 @@ export const profile = {
     "Team & Stakeholder Coordination",
   ],
   projects: [
-    "HRM system development",
-    "Payroll automation system",
-    "KPI tracking system / dashboards",
-    "Digital transformation systems for media",
-    "ERP implementation (Odoo)",
+    {
+      category: "AI Engineering",
+      items: [
+        "AI Customer Support Chatbot",
+        "AI Business Automation Platform",
+        "AI Portfolio Assistant",
+        "Social Media AI Monitoring System",
+        "AI Content Generation Platform",
+        "Intelligent Document Processing System",
+        "AI Task Management System",
+        "HRM System with AI Features",
+      ],
+    },
+    {
+      category: "Network & Cybersecurity Engineering",
+      items: [
+        "Enterprise Network Infrastructure Deployment",
+        "Network Security Architecture Implementation",
+        "Firewall & VPN Security Solutions",
+        "Cybersecurity Risk Assessment",
+        "PCI DSS Compliance Program",
+        "Cloud Security Implementation",
+        "Identity & Access Management (IAM)",
+        "Disaster Recovery & Business Continuity Planning",
+      ],
+    },
   ],
   interests: [
     "Fintech innovation",
@@ -169,7 +190,7 @@ Skills:
 ${profile.skills.map((s) => `- ${s}`).join("\n")}
 
 Projects:
-${profile.projects.map((p) => `- ${p}`).join("\n")}
+${profile.projects.map((cat) => `${cat.category}:\n${cat.items.map((p) => `  - ${p}`).join("\n")}`).join("\n\n")}
 
 Interests:
 ${profile.interests.map((i) => `- ${i}`).join("\n")}`;
