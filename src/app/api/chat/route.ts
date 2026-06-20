@@ -50,6 +50,16 @@ export async function POST(request: Request) {
 
   const trimmed = messages.slice(-MAX_MESSAGES);
 
+  const latestUserMessage = [...trimmed].reverse().find((m) => m.role === "user");
+  console.log(
+    JSON.stringify({
+      event: "chat_message",
+      ts: new Date().toISOString(),
+      question: latestUserMessage?.content ?? "",
+      turn: trimmed.length,
+    })
+  );
+
   const anthropic = new Anthropic({ apiKey });
 
   const stream = new ReadableStream({
