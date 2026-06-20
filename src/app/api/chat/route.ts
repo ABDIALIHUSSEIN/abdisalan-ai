@@ -61,7 +61,9 @@ export async function POST(request: Request) {
     })
   );
 
-  sendQuestionAlert(latestUserMessage?.content ?? "", trimmed.length).catch(() => null);
+  sendQuestionAlert(latestUserMessage?.content ?? "", trimmed.length).catch((err) => {
+    console.error("EMAIL_ERROR", err instanceof Error ? err.message : String(err));
+  });
 
   const anthropic = new Anthropic({ apiKey });
 
