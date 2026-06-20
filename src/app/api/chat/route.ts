@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { buildSystemPrompt } from "@/lib/system-prompt";
+import { sendQuestionAlert } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -59,6 +60,8 @@ export async function POST(request: Request) {
       turn: trimmed.length,
     })
   );
+
+  sendQuestionAlert(latestUserMessage?.content ?? "", trimmed.length).catch(() => null);
 
   const anthropic = new Anthropic({ apiKey });
 
