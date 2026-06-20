@@ -124,12 +124,14 @@ export default function ChatApp() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            onClick={clearChat}
-            className="text-xs text-zinc-500 transition hover:text-zinc-200"
-          >
-            New chat
-          </button>
+          {messages.length > 0 && (
+            <button
+              onClick={clearChat}
+              className="rounded-md border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-red-500/60 hover:bg-red-500/10 hover:text-red-400"
+            >
+              Clear chat
+            </button>
+          )}
           <Link
             href="/about"
             className="rounded-md border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white"
