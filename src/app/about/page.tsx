@@ -59,6 +59,35 @@ export default function About() {
           </ul>
         </Section>
 
+        <Section title="Education">
+          <div className="space-y-4">
+            {profile.education.map((e) => (
+              <div key={e.institution} className="border-b border-zinc-900 pb-4">
+                <div className="font-medium text-zinc-200">{e.institution}</div>
+                <div className="mt-0.5 text-sm text-zinc-400">{e.degree}</div>
+                <div className="mt-1 flex gap-3 text-xs text-zinc-600">
+                  <span>{e.years}</span>
+                  {"grade" in e && <span>{e.grade}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Certifications">
+          <div className="space-y-2">
+            {profile.certifications.map((c) => (
+              <div key={c.name} className="flex items-start justify-between gap-4 border-b border-zinc-900 pb-2">
+                <div>
+                  <div className="text-sm text-zinc-200">{c.name}</div>
+                  <div className="text-xs text-zinc-500">{c.issuer}</div>
+                </div>
+                <span className="shrink-0 text-xs text-zinc-600">{c.issued}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+
         <Section title="Interests">
           <div className="flex flex-wrap gap-2">
             {profile.interests.map((interest) => (
