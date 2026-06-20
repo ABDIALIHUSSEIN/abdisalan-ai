@@ -133,6 +133,13 @@ export const profile = {
     "Automation",
     "Sports & technology",
   ],
+  contact: {
+    title: "CTO",
+    company: "Asal Media Corporation",
+    location: "Mogadishu, Somalia",
+    website: "asalmediacorp.com",
+    email: "abdisalan@asalmediacorp.com",
+  },
   education: [
     {
       institution: "Hayaan Secondary School",

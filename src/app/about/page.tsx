@@ -21,11 +21,12 @@ export default function About() {
 
       <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <h2 className="text-3xl font-semibold tracking-tight">{profile.name}</h2>
-        <ul className="mt-3 space-y-1 text-zinc-400">
-          {profile.roles.map((role) => (
-            <li key={role}>{role}</li>
-          ))}
-        </ul>
+        <p className="mt-1 text-zinc-400">{profile.contact.title} · {profile.contact.company}</p>
+        <p className="mt-0.5 text-sm text-zinc-600">{profile.contact.location}</p>
+        <div className="mt-3 flex flex-wrap gap-3 text-sm">
+          <a href={`https://${profile.contact.website}`} target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition">{profile.contact.website}</a>
+          <a href={`mailto:${profile.contact.email}`} className="text-zinc-400 hover:text-zinc-200 transition">{profile.contact.email}</a>
+        </div>
 
         <Section title="Experience">
           <div className="space-y-6">

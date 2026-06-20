@@ -8,7 +8,7 @@ export async function sendQuestionAlert(question: string, turn: number) {
 
   await resend.emails.send({
     from: "Abdisalan AI <onboarding@resend.dev>",
-    to: "sirabdiali@gmail.com",
+    to: "abdisalan@asalmediacorp.com",
     subject: "New visitor question on Abdisalan AI",
     text: `A visitor just asked:\n\n"${question}"\n\n(Turn ${turn} of the conversation)\n\nView live site: https://abdisalan-ai.vercel.app`,
   });
