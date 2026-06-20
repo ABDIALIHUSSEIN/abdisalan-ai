@@ -44,6 +44,7 @@ export const profile = {
       institution: "Hayaan Secondary School",
       degree: "High School Certificate, Science",
       years: "2009 – 2014",
+      grade: "",
     },
     {
       institution: "University of Somalia (UNISO)",
