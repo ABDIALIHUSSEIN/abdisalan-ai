@@ -139,6 +139,8 @@ export const profile = {
     location: "Mogadishu, Somalia",
     website: "asalmediacorp.com",
     email: "abdisalan@asalmediacorp.com",
+    linkedin: "https://www.linkedin.com/in/abdialiarale/",
+    instagram: "https://www.instagram.com/abdiarle",
   },
   education: [
     {
