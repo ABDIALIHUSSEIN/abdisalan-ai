@@ -12,7 +12,7 @@ const STORAGE_KEY = "abdisalan-ai-chat";
 
 const SUGGESTED_PROMPTS = [
   "Who is Abdisalan?",
-  "What's his career background?",
+  "What's his tech setup?",
   "Quiz me on AI",
   "Quiz me on Project Management",
 ];
