@@ -115,9 +115,7 @@ export default function ChatApp() {
     <div className="flex h-screen flex-col bg-zinc-950 text-zinc-100">
       <header className="flex items-center justify-between border-b border-zinc-800 px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-sm font-semibold">
-            AA
-          </div>
+          <img src="/avatar.jpg" alt="Abdisalan Ali" className="h-8 w-8 rounded-full object-cover" />
           <div>
             <h1 className="text-sm font-semibold leading-tight">Abdisalan AI</h1>
             <p className="text-xs leading-tight text-zinc-500">Digital twin &middot; ask me anything about him</p>
