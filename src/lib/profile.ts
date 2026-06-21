@@ -133,6 +133,21 @@ export const profile = {
     "Automation",
     "Sports & technology",
   ],
+  techSetup: {
+    hardware: [
+      { item: "MacBook Pro", note: "32GB RAM — primary machine, powerful enough for everything." },
+      { item: "iPad Pro (5th Generation)", note: "Reading, note-taking, and working on the go." },
+      { item: "Dell 32\" 8K Monitor", note: "Incredible screen real estate and sharp visuals." },
+      { item: "Logitech MX Master Mouse", note: "Comfortable, reliable, and great for productivity." },
+      { item: "Logitech Mechanical Keyboard", note: "The best keyboard he has ever used." },
+    ],
+    software: [
+      { item: "Emacs Org Mode", note: "Note-taking system and personal second brain." },
+      { item: "VS Code", note: "Go-to editor for software development, AI projects, and automation." },
+      { item: "Browser-First Workflow", note: "Most tools and infrastructure run in the cloud — nearly everything happens inside the browser." },
+    ],
+    philosophy: "Keep it simple: powerful hardware, minimal software, and a cloud-first workflow that lets you work from anywhere.",
+  },
   contact: {
     title: "CTO",
     company: "Asal Media Corporation",
@@ -202,5 +217,10 @@ Projects:
 ${profile.projects.map((cat) => `${cat.category}:\n${cat.items.map((p) => `  - ${p}`).join("\n")}`).join("\n\n")}
 
 Interests:
-${profile.interests.map((i) => `- ${i}`).join("\n")}`;
+${profile.interests.map((i) => `- ${i}`).join("\n")}
+
+Tech Setup:
+Hardware: ${profile.techSetup.hardware.map((h) => `${h.item} (${h.note})`).join("; ")}
+Software: ${profile.techSetup.software.map((s) => `${s.item} (${s.note})`).join("; ")}
+Philosophy: ${profile.techSetup.philosophy}`;
 }
