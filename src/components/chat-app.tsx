@@ -39,6 +39,15 @@ export default function ChatApp() {
   }, [messages]);
 
   useEffect(() => {
+    if (messages.length === 0 || isStreaming) return;
+    const timer = setTimeout(() => {
+      setMessages([]);
+      window.localStorage.removeItem(STORAGE_KEY);
+    }, 2 * 60 * 1000);
+    return () => clearTimeout(timer);
+  }, [messages, isStreaming]);
+
+  useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
