@@ -207,18 +207,31 @@ export default function ChatApp() {
               className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[88%] whitespace-pre-wrap rounded-2xl px-4 py-3 text-[15px] leading-relaxed sm:max-w-[80%] sm:text-sm ${
+                className={`max-w-[88%] rounded-2xl px-4 py-3 text-[15px] leading-relaxed sm:max-w-[80%] sm:text-sm ${
                   message.role === "user"
                     ? "bg-indigo-600 text-white"
                     : "border border-zinc-800 bg-zinc-900 text-zinc-100"
                 }`}
               >
-                {message.content || (
+                {message.content === "" ? (
                   <span className="inline-flex gap-1.5 py-0.5">
                     <span className="h-2 w-2 animate-bounce rounded-full bg-zinc-500 [animation-delay:-0.2s]" />
                     <span className="h-2 w-2 animate-bounce rounded-full bg-zinc-500" />
                     <span className="h-2 w-2 animate-bounce rounded-full bg-zinc-500 [animation-delay:0.2s]" />
                   </span>
+                ) : message.content.includes("[SHOW_PHOTO]") ? (
+                  <div className="flex flex-col gap-3">
+                    <img
+                      src="/avatar.jpg"
+                      alt="Abdisalan Ali"
+                      className="w-48 rounded-2xl object-cover shadow-lg sm:w-56"
+                    />
+                    <span className="whitespace-pre-wrap">
+                      {message.content.replace("[SHOW_PHOTO]", "").trim()}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="whitespace-pre-wrap">{message.content}</span>
                 )}
               </div>
             </div>
