@@ -133,6 +133,14 @@ export const profile = {
     "Automation",
     "Sports & technology",
   ],
+  personal: {
+    height: "175 cm",
+    weight: "74 kg",
+    favoriteColors: ["Navy blue", "Black", "White"],
+    countriesVisited: ["Dubai (UAE)", "Turkey", "Kenya", "Djibouti", "Uganda", "Malaysia", "Thailand"],
+    travelStyle: "Solo traveler",
+    favoriteCoffee: "Flat White",
+  },
   techSetup: {
     hardware: [
       { item: "MacBook Pro", note: "32GB RAM — primary machine, powerful enough for everything." },
@@ -218,6 +226,13 @@ ${profile.projects.map((cat) => `${cat.category}:\n${cat.items.map((p) => `  - $
 
 Interests:
 ${profile.interests.map((i) => `- ${i}`).join("\n")}
+
+Personal:
+Height: ${profile.personal.height}, Weight: ${profile.personal.weight}
+Favorite colors: ${profile.personal.favoriteColors.join(", ")}
+Countries visited: ${profile.personal.countriesVisited.join(", ")}
+Travel style: ${profile.personal.travelStyle}
+Favorite coffee: ${profile.personal.favoriteCoffee}
 
 Tech Setup:
 Hardware: ${profile.techSetup.hardware.map((h) => `${h.item} (${h.note})`).join("; ")}
