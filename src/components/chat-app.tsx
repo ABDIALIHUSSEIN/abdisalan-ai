@@ -247,11 +247,11 @@ export default function ChatApp() {
                     <span className="h-2 w-2 animate-bounce rounded-full bg-zinc-500" />
                     <span className="h-2 w-2 animate-bounce rounded-full bg-zinc-500 [animation-delay:0.2s]" />
                   </span>
-                ) : message.content.includes("[SHOW_PHOTO]") ? (
+                ) : message.content.includes("__PHOTO__") ? (
                   <div className="flex flex-col gap-3">
                     <TimedPhoto />
                     <span className="whitespace-pre-wrap">
-                      {message.content.replace("[SHOW_PHOTO]", "").trim()}
+                      {message.content.replace("__PHOTO__", "").trim()}
                     </span>
                   </div>
                 ) : (
