@@ -3,6 +3,34 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+function TimedPhoto() {
+  const [visible, setVisible] = useState(true);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => setFading(true), 17000);
+    const hideTimer = setTimeout(() => setVisible(false), 20000);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <img
+      src="/avatar.jpg"
+      alt="Abdisalan Ali"
+      className="w-48 rounded-2xl object-cover shadow-lg sm:w-56"
+      style={{
+        transition: "opacity 3s ease",
+        opacity: fading ? 0 : 1,
+      }}
+    />
+  );
+}
+
 type Message = {
   role: "user" | "assistant";
   content: string;
@@ -221,11 +249,7 @@ export default function ChatApp() {
                   </span>
                 ) : message.content.includes("[SHOW_PHOTO]") ? (
                   <div className="flex flex-col gap-3">
-                    <img
-                      src="/avatar.jpg"
-                      alt="Abdisalan Ali"
-                      className="w-48 rounded-2xl object-cover shadow-lg sm:w-56"
-                    />
+                    <TimedPhoto />
                     <span className="whitespace-pre-wrap">
                       {message.content.replace("[SHOW_PHOTO]", "").trim()}
                     </span>
