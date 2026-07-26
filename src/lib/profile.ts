@@ -1,9 +1,9 @@
 export const profile = {
   name: "Abdisalan Ali",
   roles: [
-    "Corporate Head of Digital Transformation & ICT at Asal Media Corporation",
+    "Corporate Head of Digital & ICT at Asal Media Corporation",
+    "Member of Security Audit Staff at Salaam Group",
     "IT Project Manager",
-    "Former CTO in media systems",
   ],
   experience: [
     {
@@ -12,14 +12,14 @@ export const profile = {
       type: "Full-time",
       roles: [
         {
-          title: "Corporate Head of Digital Transformation & ICT",
+          title: "Corporate Head of Digital & ICT",
           period: "Dec 2025 – Present",
-          description: "Owns enterprise digital and ICT strategy, governance, and delivery.",
+          description: "Own enterprise digital/ICT strategy, governance, delivery.",
         },
         {
           title: "Project & Change Manager",
           period: "Mar 2024 – Dec 2025",
-          description: "Led cross-functional change and delivered ERP and ICT upgrades.",
+          description: "Led cross-functional change; delivered ERP/ICT upgrades.",
         },
       ],
     },
@@ -43,13 +43,18 @@ export const profile = {
     },
     {
       org: "Salaam Group",
-      location: "Djibouti",
+      location: "Djibouti, Djibouti",
+      type: "Full-time",
       roles: [
         {
-          title: "Network & Enterprise Security Architect",
-          period: "Apr 2018 – Jan 2024",
-          type: "Full-time",
-          description: "Led architecture for Zero Trust, network segmentation, IAM/MFA, encryption, SIEM, and EDR.",
+          title: "Member of Security Audit Staff",
+          period: "Jul 2026 – Present",
+          description: "Supporting security audits, risk assessments, and cybersecurity compliance.",
+        },
+        {
+          title: "Network & Enterprise Security Architect (On Leave)",
+          period: "Apr 2018 – Present",
+          description: "Led architecture for Zero Trust, segmentation, IAM/MFA, encryption, SIEM/EDR.",
         },
       ],
     },
@@ -76,7 +81,7 @@ export const profile = {
           description: "Assisted with server, network, and systems administration.",
         },
         {
-          title: "IT Trainee / Junior",
+          title: "Freshman (IT Trainee/Junior)",
           period: "Jul 2014 – Jul 2015",
           type: "Internship",
           description: "Entry-level IT support and learning rotation.",
@@ -157,11 +162,12 @@ export const profile = {
     philosophy: "Keep it simple: powerful hardware, minimal software, and a cloud-first workflow that lets you work from anywhere.",
   },
   contact: {
-    title: "CTO",
+    title: "Corporate Head of Digital & ICT",
     company: "Asal Media Corporation",
     location: "Mogadishu, Somalia",
     website: "asalmediacorp.com",
     email: "abdisalan@asalmediacorp.com",
+    phone: "+252 61 333 3322",
     linkedin: "https://www.linkedin.com/in/abdialiarale/",
     instagram: "https://www.instagram.com/abdiarle",
   },
@@ -237,5 +243,16 @@ Favorite coffee: ${profile.personal.favoriteCoffee}
 Tech Setup:
 Hardware: ${profile.techSetup.hardware.map((h) => `${h.item} (${h.note})`).join("; ")}
 Software: ${profile.techSetup.software.map((s) => `${s.item} (${s.note})`).join("; ")}
-Philosophy: ${profile.techSetup.philosophy}`;
+Philosophy: ${profile.techSetup.philosophy}
+
+Contact:
+Name: Abdisalan Ali Hussein
+Title: ${profile.contact.title}
+Company: ${profile.contact.company}
+Phone: ${profile.contact.phone}
+Email: ${profile.contact.email}
+Website: ${profile.contact.website}
+Location: ${profile.contact.location}
+LinkedIn: ${profile.contact.linkedin}
+Instagram: ${profile.contact.instagram}`;
 }
