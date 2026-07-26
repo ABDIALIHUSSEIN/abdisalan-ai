@@ -7,7 +7,6 @@ export default function About() {
       {/* Header */}
       <header className="sticky top-0 z-10 flex items-center justify-between border-b border-zinc-800 bg-zinc-950/90 px-4 py-3 backdrop-blur-sm sm:px-6">
         <div className="flex items-center gap-2.5">
-          <img src="/avatar.jpg" alt="Abdisalan Ali" className="h-8 w-8 rounded-full object-cover" />
           <h1 className="text-sm font-semibold">Abdisalan AI</h1>
         </div>
         <Link
@@ -20,12 +19,7 @@ export default function About() {
 
       <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
         {/* Hero */}
-        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
-          <img
-            src="/avatar.jpg"
-            alt="Abdisalan Ali"
-            className="h-20 w-20 rounded-2xl object-cover ring-4 ring-indigo-500/20 sm:h-24 sm:w-24"
-          />
+        <div className="flex flex-col items-start gap-4">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{profile.name}</h2>
             <p className="mt-1 text-zinc-400">{profile.contact.title} · {profile.contact.company}</p>
@@ -36,6 +30,9 @@ export default function About() {
               <span className="text-zinc-700">·</span>
               <a href={`mailto:${profile.contact.email}`}
                 className="text-zinc-400 transition hover:text-zinc-200">{profile.contact.email}</a>
+              <span className="text-zinc-700">·</span>
+              <a href={`tel:${profile.contact.phone}`}
+                className="text-zinc-400 transition hover:text-zinc-200">{profile.contact.phone}</a>
             </div>
             <div className="mt-3 flex gap-2">
               <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer"
@@ -130,6 +127,34 @@ export default function About() {
                 <span className="text-xs text-zinc-600 sm:shrink-0">{c.issued}</span>
               </div>
             ))}
+          </div>
+        </Section>
+
+        <Section title="Tech Setup">
+          <div className="space-y-5">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">Hardware</p>
+              <div className="space-y-2">
+                {profile.techSetup.hardware.map((h) => (
+                  <div key={h.item} className="flex flex-col gap-0.5 rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-3">
+                    <span className="text-sm font-medium text-zinc-200">{h.item}</span>
+                    <span className="text-xs text-zinc-500">{h.note}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">Software</p>
+              <div className="space-y-2">
+                {profile.techSetup.software.map((s) => (
+                  <div key={s.item} className="flex flex-col gap-0.5 rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-3">
+                    <span className="text-sm font-medium text-zinc-200">{s.item}</span>
+                    <span className="text-xs text-zinc-500">{s.note}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs italic text-zinc-600">{profile.techSetup.philosophy}</p>
           </div>
         </Section>
 
