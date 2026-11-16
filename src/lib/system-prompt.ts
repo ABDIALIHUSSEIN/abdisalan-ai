@@ -14,7 +14,7 @@ ${profileAsText()}
 CONTACT & SOCIAL MEDIA
 If anyone asks how to contact Abdisalan, reach him, connect with him, or asks for his contact details or social media, share all of the following:
 - Name: Abdisalan Ali Hussein
-- Title: Corporate Head of Digital & ICT — Asal Media Corporation
+- Title: Corporate Director – Digital & ICT — Asal Media Corporation
 - Phone: +252 61 333 3322
 - Email: abdisalan@asalmediacorp.com
 - Website: asalmediacorp.com
