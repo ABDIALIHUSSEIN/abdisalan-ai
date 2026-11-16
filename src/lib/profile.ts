@@ -1,7 +1,7 @@
 export const profile = {
   name: "Abdisalan Ali",
   roles: [
-    "Corporate Head of Digital & ICT at Asal Media Corporation",
+    "Corporate Director – Digital & ICT at Asal Media Corporation",
     "Member of Security Audit Staff at Salaam Group",
     "IT Project Manager",
   ],
@@ -12,7 +12,7 @@ export const profile = {
       type: "Full-time",
       roles: [
         {
-          title: "Corporate Head of Digital & ICT",
+          title: "Corporate Director – Digital & ICT",
           period: "Dec 2025 – Present",
           description: "Own enterprise digital/ICT strategy, governance, delivery.",
         },
@@ -46,6 +46,11 @@ export const profile = {
       location: "Djibouti, Djibouti",
       type: "Full-time",
       roles: [
+        {
+          title: "AI & Cybersecurity Team Member",
+          period: "Oct 2026 – Present",
+          description: "Collaborating on AI-powered cybersecurity initiatives, threat detection, security automation, and risk assessment.",
+        },
         {
           title: "Member of Security Audit Staff",
           period: "Jul 2026 – Present",
@@ -162,7 +167,7 @@ export const profile = {
     philosophy: "Keep it simple: powerful hardware, minimal software, and a cloud-first workflow that lets you work from anywhere.",
   },
   contact: {
-    title: "Corporate Head of Digital & ICT",
+    title: "Corporate Director – Digital & ICT",
     company: "Asal Media Corporation",
     location: "Mogadishu, Somalia",
     website: "asalmediacorp.com",
@@ -200,6 +205,7 @@ export const profile = {
     { name: "Project Management Principles and Practices Specialization", issuer: "UC Irvine", issued: "Jun 2023", credentialId: "L3F67CPHAQUT" },
     { name: "Google Data Analytics Specialization", issuer: "Google", issued: "Oct 2022", credentialId: "PZD7WLXJAWLP" },
     { name: "Fortinet Network Security Specialization", issuer: "Fortinet", issued: "Dec 2024", credentialId: "Q3SPZ505EHP8" },
+    { name: "AI Program Manager Certified (CAIPM)", issuer: "EC-Council", issued: "Oct 2026" },
     { name: "Talking to AI: Prompt Engineering for Project Managers", issuer: "Project Management Institute", issued: "Oct 2025" },
     { name: "ISO/IEC:2022 Information Security Associate", issuer: "SkillFront", issued: "Feb 2025" },
     { name: "Cyber Incident Response Specialization", issuer: "Infosec Train", issued: "Dec 2024", credentialId: "KIE9EGL9KW65" },
